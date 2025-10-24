@@ -8,13 +8,13 @@ const DashboardPage = () => {
   const router = useRouter();
 
   const secciones = [
-    { id: 1, nombre: 'Usuarios', icono: Users, color: 'from-blue-500 to-blue-600' },
-    { id: 2, nombre: 'Propiedades', icono: Home, color: 'from-emerald-500 to-emerald-600' },
-    { id: 3, nombre: 'Estadias', icono: Calendar, color: 'from-purple-500 to-purple-600' },
+    { id: 1, nombre: 'Usuarios', icono: Users, ruta: '/dashboard/usuarios', color: 'from-blue-500 to-blue-600' },
+    { id: 2, nombre: 'Propiedades', icono: Home, ruta: '/dashboard/propiedades', color: 'from-emerald-500 to-emerald-600' },
+    { id: 3, nombre: 'Estadias', icono: Calendar, ruta: '/dashboard/estadias', color: 'from-purple-500 to-purple-600' },
   ];
 
-  const handleNavigation = (seccionNombre : string) => {
-    router.push(`/dashboard/${seccionNombre.toLowerCase()}`);
+  const handleNavigation = (ruta: string) => {
+    router.push(ruta.toLowerCase());
   };
 
   return (
@@ -32,7 +32,7 @@ const DashboardPage = () => {
               <button
                 className="group relative overflow-hidden w-full text-left p-8 rounded-2xl bg-white border border-gray-200 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
                 key={seccion.id}
-                onClick={() => handleNavigation(seccion.nombre)}
+                onClick={() => handleNavigation(seccion.ruta)}
               >
                 <div className="flex items-center gap-6">
                   <div className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${seccion.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
