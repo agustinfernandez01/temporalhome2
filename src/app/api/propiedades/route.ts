@@ -1,6 +1,6 @@
 // app/api/propiedades/route.ts
 import { NextResponse } from "next/server";
-import { getPropiedadesConImagenes , createPropiedadRepo } from "@/Repositorys/propiedadesRepo";
+import { getPropiedadesConImagenes , createPropiedadRepo , editPropiedadRepo } from "@/Repositorys/propiedadesRepo";
 import { get } from "http";
 
 export const revalidate = 60; // opcional: cache ISR de 60s
